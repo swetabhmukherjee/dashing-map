@@ -152,7 +152,9 @@ class Dashing.Map extends Dashing.Widget
     @map = new google.maps.Map $(@node)[0], options
     @heat = []
     @markers = []
-
+     $height = $('.widget-map').parent().height();
+     $width = $('.widget-map').parent().width();
+     $('.widget-map').css("height", $height).css("width", $width)
   onData: (data) ->
     return unless @map
     if $(@node).data("type") == 'heat'
